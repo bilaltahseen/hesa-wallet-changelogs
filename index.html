@@ -12,6 +12,55 @@
   </header>
   <main>
     <section>
+      <h2>[Unreleased] - 2024-11-21</h2>
+      <p>Added</p>
+      <ul>
+        <li>Server Sent Events for transaction confirmation</li>
+      </ul>
+      <p>Changed</p>
+      <ul>
+        <li>Removed counter offer offchain APIs</li>
+        <li>Replaces counter offer offchain APIs with two new non payable functions</li>
+        <li>Make Counter Offer</li>
+        <code>
+          {
+            "orgCode": "{{organization}}",
+            "channel": "{{channel}}",
+            "chaincode": "nft",
+            "func": "MakeCounterOffer",
+            "walletAddress": "{{walletAddress}}",
+            "country": "PK",
+            "code": "839873",
+            "params": {
+                "id": "af51aeff-2799-4c33-9c85-a8b96b8c84cb",
+                "assetType": "nft",
+                "offererId": "0x4925D03C16A4CC04CA665A34EC3BC43CD9D8B705",
+                "offerAmount": 7860
+            }
+        }
+        </code>
+        <li>Reject Counter Offer</li>
+        <code>
+          {
+            "orgCode": "{{organization}}",
+            "channel": "{{channel}}",
+            "chaincode": "nft",
+            "func": "MakeCounterOffer",
+            "walletAddress": "{{walletAddress}}",
+            "country": "PK",
+            "code": "839873",
+            "params": {
+                "id": "af51aeff-2799-4c33-9c85-a8b96b8c84cb",
+                "assetType": "nft"
+            }
+        }
+        </code>
+        <li>Asset Type indicates for item type either nft or collection</li>
+      </ul>
+      <p>Fixes</p>
+      <ul>
+        <li>Fixed a bug where it showing past counter offer for new offer</li>
+      <hr/>
       <h2>[Unreleased] - 2024-11-16</h2>
       <p>Added</p>
       <ul>
